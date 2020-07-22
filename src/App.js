@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const MOVIE_POSTER_PATH = 'https://image.tmdb.org/t/p/w500';
 
@@ -44,6 +45,16 @@ function Movie({ title, poster, popularity }) {
             <p>{popularity}</p>
         </section>
     );
+}
+
+//prop-types : react에서 컴퍼넌트로 전달되는 prop의 타입을 체크함으로서 오류를 인지할수있다.
+//-> 부수적 효과 : proptype을 상세하게 명세함으로서 그것만으로도 전달되는 prop이 무엇이고 컴퍼넌트간의 
+//전달되는 데이터의 타입들을 명확하게 인지할 수 있다. 이로 인해 가독성이 좋아질 수 있다
+
+Movie.propTypes = {
+    title: PropTypes.string.isRequired,
+    poster: PropTypes.string.isRequired,
+    popularity: PropTypes.number.isRequired
 }
 
 //map안의 콜백함수를 따로 빼낼수도 있다
