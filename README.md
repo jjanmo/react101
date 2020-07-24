@@ -13,17 +13,41 @@
 1. MVC model
 2. Virtual DOM
 
-## Chapter02 : What is JSX and props?
+## Chapter02/03 : What is JSX?
 
 1. JSX
-2. props
 
-## Chapter03 : What is state?
+## Chapter03 : What is props and state?
 
-1. state
+> props와 state를 비교해보자
+
+### Commons(공통점)
+
+-   모두 자바스크립트 객체이다
+
+### Differences(차이점)
+
+1. props
+
+-   `properties`의 준말로 자바스크립트 객체를 말한다.
+-   컴퍼넌트로 전달되는 것으로서 마치 함수에 전달되는 인자로 생각할 수 있다.
+-
+
+2. state
 
 ## Chapter04
 
 ## Chapter05
 
 ## Chapter06 : routing
+
+# Ref
+
+-   Chap01
+-   Chap02
+-   Chap03
+    -   [](https://github.com/uberVU/react-guide/blob/master/props-vs-state.md)
+    -   [](https://lucybain.com/blog/2016/react-state-vs-pros/)
+-   Chap04
+-   Chap05
+-   Chap06
