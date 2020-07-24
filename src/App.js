@@ -6,25 +6,6 @@ import Movie from './Movie';
 
 const API_KEY = 'f064a67e0d808eb7bb367bbd759b1bcc';
 
-async function getMovieList() {
-    const { data: { results } } = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`);
-    return results;
-}
-
-function renderMovies(list) {
-    return list.map(movie => {
-        return (
-            <Movie
-                key={movie.id}
-                id={movie.id}
-                title={movie.title}
-                poster={movie.poster_path}
-                rating={movie.vote_average}
-            />
-        );
-    })
-}
-
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -32,14 +13,32 @@ class App extends React.Component {
             isLoading: true,
             movieList: []
         };
-        this.getMovieList = getMovieList;
     }
 
-    async componentDidMount() {
+    async getMovieList() {
+        const { data: { results } } = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`);
         this.setState({
             isLoading: false,
-            movieList: await this.getMovieList()
+            movieList: results
         });
+    }
+
+    componentDidMount() {
+        this.getMovieList();
+    }
+
+    renderMovies(list) {
+        return list.map(movie => {
+            return (
+                <Movie
+                    key={movie.id}
+                    id={movie.id}
+                    title={movie.title}
+                    poster={movie.poster_path}
+                    rating={movie.vote_average}
+                />
+            );
+        })
     }
 
     render() {
@@ -48,7 +47,7 @@ class App extends React.Component {
             <h1>{
                 isLoading
                     ? 'Loading...'
-                    : renderMovies(movieList)
+                    : this.renderMovies(movieList)
             }</h1>
         );
     }
