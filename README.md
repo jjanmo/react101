@@ -6,7 +6,7 @@
 
 > This is written based on [NomadCoders React Fundemental Course](https://nomadcoders.co/react-fundamentals)
 
-> [DEMO](https://github.com/jjanmo/react101)
+> [DEMO](https://jjanmo.github.io/react101)
 
 ## Chapter00 : What is npx?
 
