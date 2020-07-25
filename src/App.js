@@ -64,7 +64,7 @@ class App extends React.Component {
         return (
             <div className="wrapper">{
                 isLoading
-                    ? 'Loading...'
+                    ? <h1>Loading...💨💨💨💨💨</h1>
                     : this.renderMovies(movieList)
             }</div>
         );

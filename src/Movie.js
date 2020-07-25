@@ -9,11 +9,11 @@ function Movie({ id, title, overview, poster, rating, release, genres }) {
         <section id={ id }>
             <img src={ `${POSTER_BASIC_PATH}${poster}` } alt={ title } title={ title } />
             <div className="movie-detail">
-                <h3>{ title }</h3>
+                <h2>{ title }</h2>
                 <span className="release-year">{ release.split('-').join('.') }</span>🎈
                 <span className="rating">{ rating } / 10</span>
                 <Genres genres={ genres } />
-                <div className="overview">{ `${overview.slice(0, 140)}...` }</div>
+                <div className="overview">{ `${overview.slice(0, 150)}...` }</div>
             </div>
         </section>
     );
