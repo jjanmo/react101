@@ -1,0 +1,53 @@
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin: 3rem 1rem;
+    border-radius: 2px;
+    background-color: rgba(13, 70, 128, 0.3);
+    color: #fff;
+    cursor: pointer;
+}
+
+section img {
+    position: relative;
+    border-radius: 5px;
+    top: -15%;
+    left: 0;
+}
+
+section .movie-detail {
+    padding-left: 2rem;
+}
+
+.movie-detail > h3 {
+    /* margin-bottom: 0.5rem; */
+}
+
+.movie-detail > span {
+    font-size: 13px;
+    margin: 0 0.3rem;
+}
+.release-year {
+    color: #3194d6;
+}
+.rating {
+    color: #16a085;
+}
+
+.movie-detail ul {
+    margin: 0.2rem 0;
+}
+
+.movie-detail li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 0.3rem;
+    color: #f39c12;
+    font-size: 14px;
+}
+
+.movie-detail .overview {
+    margin-top: 0.2rem;
+}
