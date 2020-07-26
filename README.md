@@ -41,7 +41,7 @@
 
 ## Chapter05 : How to deploy github-pages
 
-## Chapter06 : routing
+## Chapter06 : react-router-dom
 
 # Ref
 

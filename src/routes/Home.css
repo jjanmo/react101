@@ -1,0 +1,15 @@
+.wrapper .mounter {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 10px;
+    /* background-color: #ecf0f1; */
+    padding: 1rem 2rem;
+    margin: 2rem 0;
+}
+
+.wrapper .loader {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
