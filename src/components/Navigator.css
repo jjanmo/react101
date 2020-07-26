@@ -1,0 +1,25 @@
+.navigator {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgba(21, 21, 21, 0.9);
+	text-align: right;
+	padding: 1rem 0;
+	z-index: 2;
+}
+
+.navigator .link {
+	text-decoration: none;
+	text-align: center;
+	color: white;
+	border: 1px #fff solid;
+	border-radius: 5px;
+	padding-bottom: 0.2rem;
+	width: 100px;
+	display: inline-block;
+}
+
+.navigator .link {
+	margin-right: 2rem;
+}

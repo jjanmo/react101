@@ -1,57 +1,62 @@
 section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    margin: 3.5rem 2rem;
-    border-radius: 2px;
-    background-color: rgba(13, 70, 128, 0.3);
-    color: #fff;
-    cursor: pointer;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+	margin: 3.5rem 2rem;
+	border-radius: 2px;
+	background-color: rgba(13, 70, 128, 0.3);
+	color: #fff;
+	cursor: pointer;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	transition: background-color 0.4s ease-in-out;
+}
+
+section:hover {
+	background-color: rgba(13, 70, 128, 0.7);
 }
 
 section img {
-    position: relative;
-    border-radius: 5px;
-    top: -12%;
-    left: 0;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	position: relative;
+	border-radius: 5px;
+	top: -12%;
+	left: 0;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 section .movie-detail {
-    padding-left: 2rem;
+	padding-left: 2rem;
 }
 .movie-detail h2 {
-    margin-bottom: 1rem;
+	margin-bottom: 1rem;
 }
 
 .movie-detail span {
-    font-size: 13px;
-    margin: 0 0.3rem;
+	font-size: 13px;
+	margin: 0 0.3rem;
 }
 
 .release-year {
-    color: #3194d6;
+	color: #3194d6;
 }
 
 .rating {
-    color: #16a085;
+	color: #16a085;
 }
 
 .movie-detail ul {
-    margin: 0.2rem 0;
+	margin: 0.2rem 0;
 }
 
 .movie-detail li {
-    list-style: none;
-    display: inline-block;
-    margin: 0 0.3rem;
-    color: #f39c12;
-    font-size: 14px;
+	list-style: none;
+	display: inline-block;
+	margin: 0 0.3rem;
+	color: #f39c12;
+	font-size: 14px;
 }
 
 .movie-detail .overview {
-    margin-top: 0.2rem;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+	margin-top: 0.2rem;
+	font-family: Georgia, 'Times New Roman', Times, serif;
 }
