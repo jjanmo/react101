@@ -2,8 +2,9 @@ import React from 'react';
 import { HashRouter, Route } from 'react-router-dom';
 import Home from './routes/Home';
 import About from './routes/About';
-import './App.css';
+import Detail from './routes/Detail';
 import Navigator from './components/Navigator';
+import './App.css';
 
 function App() {
 	return (
@@ -11,6 +12,7 @@ function App() {
 			<Navigator />
 			<Route path="/" exact={true} component={Home}></Route>
 			<Route path="/about" component={About}></Route>
+			<Route path="/detail/:id" component={Detail}></Route>
 		</HashRouter>
 	);
 }

@@ -40,7 +40,6 @@ class Home extends React.Component {
 				[]
 			);
 		});
-		console.log(results);
 		this.setState({
 			isLoading: false,
 			movieList: results,
@@ -71,18 +70,18 @@ class Home extends React.Component {
 	render() {
 		const { isLoading, movieList } = this.state;
 		return (
-			<div className='wrapper'>
+			<div className="wrapper">
 				{isLoading ? (
-					<div className='loader'>
+					<div className="loader">
 						<h1>
 							Loading...
-							<span role='img' aria-label='horsehead'>
+							<span role="img" aria-label="horsehead">
 								💨💨💨💨💨
 							</span>
 						</h1>
 					</div>
 				) : (
-					<div className='mounter'>{this.renderMovies(movieList)}</div>
+					<div className="movies">{this.renderMovies(movieList)}</div>
 				)}
 			</div>
 		);
