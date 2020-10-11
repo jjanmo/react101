@@ -88,9 +88,33 @@ function App() {
 
 ## Chapter03 : What is props and state?
 
--   Props
+> props와 state 모두 데이터(정보)를 말한다. 하지만 여러가지 측면에서 차이점이 존재한다. 차이점에 중점을 두고 살펴보자
 
--   State
+![props-state](image/props_state.png)
+
+> 위 이미지는 props와 stats에 대한 개괄을 보여주는 이미지이다. 개념을 이해하고 보면 아하!라는 감탄사가 나올지도 🤩
+
+### Props
+
+### State
+
+-   특징
+
+    > 자바스크립트 객체이다
+
+    > 클래스 컴퍼넌트에서만 사용할 수 있다.(React Hooks의 등장으로 함수형 컴퍼넌트에서도 state를 사용가능해졌다.)
+
+    > 컴퍼넌트에서 state를 사용하기 위해선 초기화 단계가 필요하다. 클래스의 생성자(constructor)에서 초기화시켜서 사용한다.
+
+-   작동 원리
+
+    > 기본적으로 **this.state = { `key : value` }** 같은 형태로 생성자에서 초기화시킨다. 하지만 생성자를 제외한 위치에서 직접 state에 접근할 수 없다. state에 접근하기 위해서는 반드시 `setState()` 메소드를 사용한다.
+
+    > 생성자를 제외한 위치에서 this.state.[key]형태로 참조는 가능하다.
+
+-   setState()
+
+    >
 
 ## Chapter04 : event in React
 
@@ -194,9 +218,38 @@ function handler(e) {
 
     > 컴퍼넌트가 불릴 때, 처음부터 생성자를 이용하여 명시적으로 this를 바인딩하여 사용한다.
 
-## Chapter05 : How to deploy github-pages
+## Chapter05 : Class Component와 Function Component
 
 ## Chapter06 : react-router-dom
+
+## 참고
+
+> How to deploy gh-page
+
+1.  npm install -D ghpages
+2.  package-json에 homepage 프로퍼티를 추가한다.
+
+    > `"homepage": "https://jjanmo.github.io/react101"`
+
+3.  scripts 명령어 설정
+
+    ```
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "deploy": "gh-pages -d build",
+        "predeploy": "npm run build"
+    },
+    ```
+
+    > 위 스크립트 명령어에 대한 실행 과정 설명
+
+    -   `npm run deploy` 실행한다.
+    -   deploy를 할 때 마다 npm은 자동적으로 predeploy 명령어를 실행한다.
+    -   predeploy가 작동되면 build 명령어를 통해서 다시 build 디렉토리를 재생성하여 최신의 코드로 프로그램을 업로드(?)한다
+    -   predeploy가 끝나면 npm은 (하고자했던) deploy를 실행한다.
+    -   gh-pages를 호출하고 거기에 build에 있는 내용을 업로드 한다.
+    -   만약에 페이지를 업데이트 했다면 다시 deploy를 해줘야한다.(`npm run deploy`를 다시 실행한다.)
 
 # Ref
 
