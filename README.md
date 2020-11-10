@@ -10,15 +10,35 @@
 
 ## Chapter00 : What is npx?
 
-> npm이라고 하면 `Node Package Manager`라고하여 패키지 관리하는 도구이다. 하지만 npx는 패키지 관리 도구가 아니다.
+> npm이라고 하면 `Node Package Manager`라고하여 패키지 관리하는 도구이다. 하지만 **npx는 패키지 관리 도구가 아니다.** npm에서 제공해주는 새로운 도구이다. npm을 좀 더 편하게 사용할 수 있게 해주는 도구로서 npm을 통해서 설치하는 패키지를 npx를 통해서 쉽게 설치하고 실행할 수 있게 도와준다.
+
+`npx의 등장 배경`
+
+npm으로 패키지를 설치할 때, 전역적으로 설치하여 관리하는 경우와 로컬에 프로젝트별로 설치해서 관리하는 경우가 있을 수 있다. 이 때 패키지의 버전관리가 문제가 생길 수 있다. 자바스크립트의 생태계의 빠른 변화로 인해 버전 역시 매우 빠르게 변화하게 되는데 이에 맞춰서 매번 업데이트를 하는 것은 여간 귀찮은 것이 아닐 수 있다. 그래서 나온 것이 npx이다.
+
+`npx는 어떻게 버전관리를 하는 것일까?`
+
+우선 해당 패키지가 기본적으로 실행되어야 할 위치에 있는지 확인한다. 위치에 해당 패키지가 없다면, npm 레지스트리에 올라가있는 최신버전으로 설치하고 실행한다. 즉 따로 버전관리를 할 필요없이 언제나 일회성으로 최신버전으로 설치하고 실행해주는 것이다.
+
+<br/>
 
 ## Chapter01 : What is virtual dom?
 
-> Virtial DOM(가상돔)을 이해하기 위해선 먼저 `SPA(Single Page Application)`에 대해서 알아야한다.
+> Virtial DOM(가상돔)을 이해하기 위해선 먼저 `SPA(Single Page Application)`에 대해서 알아야보자.
 
 `SPA`란 최초로 정적인 페이지가 서버로부터 랜더링되고 이 후의 요청에서 서버로부터 새롭게 페이지를 구성해서 다시 랜더링하는 것이 아닌, 서버로부터 요청된 데이터만을 JSON형식으로 받아서 자바스크립트를 통해서 페이지에서 변경된 부분만을 동적으로 만들어주는 기술을 말한다.
 
 ![spa](image/SPA.png)
+
+> 위 이미지는 전통적인 페이지 랜더링 방식과 SPA 방식을 그림으로 비교한 것이다.
+
+> 리액트는 SPA방식에서 뷰에 초점을 맞춘 라이브러리이다. 그렇다면 가상돔은 여기서 어떻게 작용을 하는 것일까?
+
+위에서도 말했듯이 SPA는 최초로 페이지가 랜더링된 후에 데이터 요청에 따라서 데이터만을 받고 자바스크립트로 DOM에 접근하여 페이지를 조작한다. 즉 복잡한 SPA에서는 많은 DOM 조작이 발생하고 이로 인해 페이지 성능에 영향을 미칠 수 있다.
+
+> DOM 조작은 굉장히 비싼 작업이다. 이는 랜더링 과정을 조금만 이해하면 알 수 있다. 랜더링 과정을 간단히 설명하면 우선 돔트리(돔노드롤 이루어진 트리)가 생성되고 돔트리에 따라서 랜더트리(스타일 트리)가 생성된다. 랜더트리가 완성되면 트리에 맞는 위치가 계산되어 각각의 노드들이 브라우저의 어느 위치에 나타나야할지가 정해진다.이 후 페인팅 작업을 통해서 실제로 브라우저에 표현된다. 이러한 과정을 `DOM 조작`이라는 말로 요약 할 수 있다.
+
+그런데 리액트는 이러한 DOM 조작을 줄이고자, 실제 DOM을 조작하기 전에 가상의 돔에 요청에 따른 변화를 미리 적용하고 실제적인 최종 변화만을 실제 DOM에 전달한다. 예를 들어서 요청에 10번 일어나서 최종적인 뷰를 보여주게 된다면, 각각의 요청마다 DOM 조작을 하는 것이 아니라 10번의 요청에 따른 변화를 가상돔에 적용한 후 최종적인 변화와 현재 DOM과의 차이점을 계산하여서 한 번만 DOM 조작을 하게 된다. 즉 가상돔은 브라우저 내의 연산을 줄임으로서 성능을 개선시키는 것이다.
 
 ## Chapter02 : JSX and Components
 
@@ -91,6 +111,8 @@ function App() {
 ```
 
 > 실제로 우리가 컴퍼넌트를 사용할 때는 컴퍼넌트의 인스턴스를 사용한다. 컴퍼넌트 인스턴스??라고 하면 좀 생소할 수 있다. 하지만 별거 없다. 그냥 컴퍼넌트를 JSX 형태로 불러오면 그것이 인스턴스가 된다. 내부적으로 살펴보면 JSX가 변환 될 때, `React.createElement()`를 사용하는데 이것은 실제적인 객체를 생성한다. 이것이 새로운 객체 인스턴스를 생성하는 것이고 결과적으로 함수를 호출하고 그 반환값을 나타내게 되는 것이다.
+
+<br/>
 
 ## Chapter03 : What is props and state?
 
@@ -259,19 +281,28 @@ function handler(e) {
 
 # Ref
 
--   Chap00
+-   Chap00 : `npx`
 
     [npx란 무엇일까](https://webruden.tistory.com/275)
 
--   Chap01
-    []()
--   Chap02
--   [React에서 Stateful 대 Stateless 함수형 컴포넌트](https://code.tutsplus.com/ko/tutorials/stateful-vs-stateless-functional-components-in-react--cms-29541)
--   [](https://devowen.com/298)
--   Chap03
-    -   [](https://github.com/uberVU/react-guide/blob/master/props-vs-state.md)
-    -   [](https://lucybain.com/blog/2016/react-state-vs-pros/)
-    -   [setState API](https://reactjs.org/docs/react-component.html#setstate)
--   Chap04
--   Chap05
--   Chap06 : [ReactRouterDOM\_생활코딩](https://www.youtube.com/watch?v=WLdbsl9UwDc&feature=youtu.be)
+-   Chap01 : `Virtual DOM`
+
+    [왜 Virtual DOM 인가](https://velopert.com/3236)
+
+-   Chap02 : `JSX and Components`
+
+    [리액트 공식 : JSX](https://ko.reactjs.org/docs/introducing-jsx.html)
+
+    [모던 리액트와 리덕스 강의 : JSX](https://www.udemy.com/course/react-redux-korean/)
+
+-   Chap03 : `Props & State`
+
+-   Chap04 : `event in React`
+
+    [리액트 공식 : 이벤트 처리하기](https://ko.reactjs.org/docs/handling-events.html)
+
+-   Chap05 : `Class Component vs Function Component`
+
+-   Chap06 : `React Router DOM`
+
+    [ReactRouterDOM\_생활코딩](https://www.youtube.com/watch?v=WLdbsl9UwDc&feature=youtu.be)
