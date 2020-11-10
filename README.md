@@ -14,6 +14,12 @@
 
 ## Chapter01 : What is virtual dom?
 
+> Virtial DOM(가상돔)을 이해하기 위해선 먼저 `SPA(Single Page Application)`에 대해서 알아야한다.
+
+`SPA`란 최초로 정적인 페이지가 서버로부터 랜더링되고 이 후의 요청에서 서버로부터 새롭게 페이지를 구성해서 다시 랜더링하는 것이 아닌, 서버로부터 요청된 데이터만을 JSON형식으로 받아서 자바스크립트를 통해서 페이지에서 변경된 부분만을 동적으로 만들어주는 기술을 말한다.
+
+![spa](image/SPA.png)
+
 ## Chapter02 : JSX and Components
 
 ### JSX(Javascript XML)
