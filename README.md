@@ -254,9 +254,17 @@ function handler(e) {
 
 ## Chapter05 : Class Component와 Function Component
 
+> 2023년 현재 `class component`는 레알 레거시 코드가 되었다. 요새는 함수형이 대세이자 정석으로 자리잡았다. 아듀 클래스! 
+
+> ps. 해당 챕터에 대한 내용이 없어서 채워넣었다.
+
 <br/>
 
 ## Chapter06 : react-router-dom
+
+> 2023년 현재 리액트 프레임워크(Next.js, Remix, Gatsby 등)의 발전으로 인해 `pure-react`만으로 개발하는 경우가 점점 줄어들고 있다. 즉, 라우터 패키지를 설치하여 사용하는 경우가 적어졌다는 의미! 또한 react-router-dom 역시 `버전 6`까지 올라가면서 내가 처음 배울 때의 그 react-router-dom과는 많이 달라진 모습이다. 자세한 내용은 [공식문서](https://reactrouter.com/en/main)를 읽어보길 권장한다. (나 역시 공식문서를 통한 학습을 `react-tutorials repo`에서 진행했었다.)
+
+> ps. 해당 챕터에 대한 내용이 없어서 채워넣었다.
 
 <br/>
 
